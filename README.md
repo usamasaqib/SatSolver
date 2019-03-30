@@ -1,5 +1,16 @@
 # SATServer
 
+This is my first serious attempt at programming something Haskell. This project implements a Sat Solver within a client server architecture. I implemented the DPLL algorithm which is a backtracking-based-search algorithm for deciding the
+satisfiability of propositional logic formulae in conjunctive normal form, as a backend for a Server that
+can be queried for solving Boolean Satisfiability Problems. 
+
+The user can provide the Server a propositional logic formula, which is parsed and converted into CNF form, and passed to the DPLL algorithm. The server returns a ticket which the user can later use to query the result of the problem.
+
+The grammer of the formula should be as follows: 
+b_prop ::= var | (b_prop | b_prop) | (b_prop & b_prop) | (~b_prop {NO SPACE AFTER THE TILDA ( ~ ) } )
+
+# Usage
+
 In order to run the program, run the generated executable. 
 From another terminal, use telnet to issue the following command
 
